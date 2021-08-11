@@ -7,7 +7,7 @@ import Chart from 'chart.js/auto'
 import receivedData from '@/data/received-data.js'
 
 export default {
-  name: 'ReceivedChart',
+  name: 'FeedbackReceivedChart',
   data () {
     return {
       receivedData: receivedData

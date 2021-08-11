@@ -1,23 +1,25 @@
 <template>
   <div>
     <div class="table-container">
-      <table class="table is-fullwidth has-text-centered">
+      <table class="table is-fullwidth has-text-centered is-hoverable">
         <thead>
           <tr>
             <th>Marketplace</th>
             <th>Feedback Date</th>
+            <th>Category</th>
             <th>Order ID</th>
             <th>Comments</th>
-            <th>Category</th>
+            <th>Carrier</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Amazon UK</td>
-            <td>14/06/2021</td>
-            <td><a href="http://dashboard.unitexcp.com/ui/orders/UTAMZ_206-0143709-9901956" target="_blank">UTAMZ_206-0143709-9901956</a></td>
-            <td>I have not received this item and would like a full refund immediately</td>
-            <td>Delivery</td>
+          <tr v-for="feedback in Feedbacks" :key="feedback.order_id">
+            <td>{{ feedback.marketplace }}</td>
+            <td>{{ feedback.date_added }}</td>
+            <td>{{ feedback.Category }}</td>
+            <td><a href="http://dashboard.unitexcp.com/ui/{feedback.order_id}" target="_blank">{{ feedback.order_id }}</a></td>
+            <td>{{ feedback.comments }}</td>
+            <td>{{ feedback.courier_service }}</td>
           </tr>
         </tbody>
       </table>
@@ -29,7 +31,7 @@
 export default {
   name: 'FeedbackList',
   props: {
-    FeedbackData: {
+    Feedbacks: {
       type: Object
     }
   }

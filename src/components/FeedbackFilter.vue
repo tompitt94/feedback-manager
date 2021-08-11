@@ -12,13 +12,13 @@
     <div class="field mr-2">
       <label class="label">Date From:</label>
       <div class="control">
-        <input class="input is-normal" type="date" v-model="fromDate">
+        <input class="input is-normal" type="date" min="2021-08-01" v-model="fromDate">
       </div>
     </div>
     <div class="field mr-2">
       <label class="label">Date To:</label>
       <div class="control">
-        <input class="input is-normal" type="date" v-model="toDate">
+        <input class="input is-normal" type="date" min="2021-08-01" v-model="toDate">
       </div>
     </div>
     <div class="field mr-2">
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'FilterBar',
+  name: 'FeedbackFilter',
   props: {
     marketplaces: {
       type: Object
@@ -42,8 +42,8 @@ export default {
     return {
       channels: this.marketplaces,
       selectedMp: 'All',
-      fromDate: '',
-      toDate: ''
+      toDate: '',
+      fromDate: ''
     }
   }
 }

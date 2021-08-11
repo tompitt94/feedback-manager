@@ -1,39 +1,46 @@
 <template>
   <div class="container">
     <div class="section">
-      <filter-bar
+      <feedback-filter
         :marketplaces="channelList"
       />
       <div class="columns">
         <div class="column">
-        <received-chart/>
+        <feedback-received-chart/>
         </div>
         <div class="column">
-         <category-chart/>
+         <feedback-category-chart/>
         </div>
       </div>
     </div>
     <div class="section">
-      <feedback-list/>
+      <feedback-list
+        :Feedbacks="this.feedbacks"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import CategoryChart from '../components/CategoryChart.vue'
+import FeedbackCategoryChart from '../components/FeedbackCategoryChart.vue'
 import FeedbackList from '../components/FeedbackList.vue'
-import FilterBar from '../components/FilterBar.vue'
-import ReceivedChart from '../components/ReceivedChart.vue'
+import FeedbackFilter from '../components/FeedbackFilter.vue'
+import FeedbackReceivedChart from '../components/FeedbackReceivedChart.vue'
 import FeedbackData from '../data/FeedbackData.json'
 // @ is an alias to /src
 
 export default {
-  name: 'Dashboard',
+  name: 'FeedbackView',
   components: {
-    FilterBar,
-    CategoryChart,
+    FeedbackFilter,
+    FeedbackCategoryChart,
     FeedbackList,
-    ReceivedChart
+    FeedbackReceivedChart
+  },
+  data () {
+    return {
+      feedbacks: FeedbackData
+    }
   },
   computed: {
     channelList () {

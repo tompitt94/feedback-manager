@@ -1,11 +1,17 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
+import FeedbackView from '../views/FeedbackView.vue'
+import FeedbackModal from '../components/FeedbackModal.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: Dashboard
+    name: 'FeedbackView',
+    component: FeedbackView
+  },
+  {
+    path: '/modal',
+    name: 'FeedbackModal',
+    component: FeedbackModal
   }
 ]
 
