@@ -3,7 +3,7 @@
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="field">
-        <label class="label">Subject</label>
+        <label class="label">Feedback Category:</label>
         <div class="control">
           <div class="select">
             <select>
@@ -15,9 +15,9 @@
       </div>
 
       <div class="field">
-        <label class="label">Comments</label>
+        <label class="label">Customer Comments</label>
         <div class="control">
-          <textarea class="textarea" placeholder="Enter Customer Comments OR commentary"></textarea>
+          <textarea class="textarea" placeholder="Enter Customer Comments OR commentary - IF POSSIBLE PLEASE TRANSLATE"></textarea>
         </div>
       </div>
       <div class="control">

@@ -13,13 +13,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="feedback in Feedbacks" :key="feedback.order_id">
+          <tr v-for="feedback in Feedbacks" :key="feedback.orderId">
             <td>{{ feedback.marketplace }}</td>
-            <td>{{ feedback.date_added }}</td>
-            <td>{{ feedback.Category }}</td>
-            <td><a href="http://dashboard.unitexcp.com/ui/{feedback.order_id}" target="_blank">{{ feedback.order_id }}</a></td>
+            <td>{{ feedback.date }}</td>
+            <td>{{ feedback.category }}</td>
+            <td><a :href="'http://dashboard.unitexcp.com/ui/orders/' + feedback.orderId" target="_blank">{{ feedback.orderId }}</a></td>
             <td>{{ feedback.comments }}</td>
-            <td>{{ feedback.courier_service }}</td>
+            <td>{{ feedback.courier }}</td>
           </tr>
         </tbody>
       </table>

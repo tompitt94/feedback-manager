@@ -1,7 +1,4 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-  </div>
   <div class="section">
     <router-view v-slot="{ Component, route }">
       <transition name="component-fade" mode="out-in">
